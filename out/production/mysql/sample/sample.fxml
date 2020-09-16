@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="36.0" layoutY="73.0" text="First Name:" />
+            <Label layoutX="36.0" layoutY="112.0" text="Last Name:" />
+            <Label layoutX="36.0" layoutY="158.0" text="Birth Date:" />
+            <Label layoutX="53.0" layoutY="201.0" text="Gender:" />
+            <Label layoutX="55.0" layoutY="246.0" text="Salary:" />
+            <TextField fx:id="fnamev" layoutX="96.0" layoutY="69.0" onKeyTyped="#setFnamev" promptText="Your Name" />
+            <TextField fx:id="lnamev" layoutX="96.0" layoutY="108.0" onKeyTyped="#setFnamev" promptText="Your Last Name" />
+            <TextField fx:id="birthdatev" layoutX="96.0" layoutY="154.0" onKeyTyped="#setFnamev" promptText="Year-Month-Day" />
+            <TextField fx:id="sexv" editable="false" layoutX="96.0" layoutY="197.0" onKeyTyped="#setFnamev" promptText="Choose Gender:" />
+            <TextField fx:id="salaryv" layoutX="96.0" layoutY="244.0" onKeyTyped="#setFnamev" promptText="XXXXXXXXXX" />
+            <Button fx:id="btnclear" layoutX="17.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnclear" prefHeight="25.0" prefWidth="263.0" text="Clear/New User" />
+            <Button fx:id="btnadd" layoutX="204.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnadd" prefHeight="25.0" prefWidth="78.0" text="Add" />
+            <TableView fx:id="tableView" layoutX="350.0" layoutY="20.0" prefHeight="600.0" prefWidth="645.0">
+              <columns>
+                <TableColumn fx:id="col_fnamev" prefWidth="83.0" text="First_Name" />
+                <TableColumn fx:id="col_lnamev" prefWidth="79.0" text="Last_Name" />
+                  <TableColumn fx:id="col_birthdatev" prefWidth="82.0" text="Birth_Day" />
+                  <TableColumn fx:id="col_sexv" prefWidth="65.0" text="Sex" />
+                  <TableColumn fx:id="col_salaryv" minWidth="0.0" prefWidth="110.0" text="Salary" />
+                  <TableColumn fx:id="col_imagev" prefWidth="224.0" text="Image" />
+              </columns>
+            </TableView>
+            <Button fx:id="dltbtn" layoutX="14.0" layoutY="315.0" mnemonicParsing="false" onAction="#deleteacount" prefHeight="25.0" prefWidth="78.0" text="Delete" />
+            <Label fx:id="count" layoutX="96.0" layoutY="7.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="btnupdate" layoutX="109.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnupdate" prefHeight="25.0" prefWidth="78.0" text="Update" />
+            <TextField fx:id="Search" layoutX="96.0" layoutY="32.0" onKeyReleased="#Search" promptText="Search" />
+            <Button fx:id="Browser" layoutX="6.0" layoutY="550.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="336.0" text="Browser" />
+            <Button fx:id="Save" layoutX="6.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Open Image Directory" />
+            <TextArea fx:id="textArea" editable="false" layoutY="620.0" prefHeight="38.0" prefWidth="679.0" promptText="Path Of Selected Image" />
+            <ImageView fx:id="imageView" fitHeight="199.0" fitWidth="344.0" layoutX="2.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="showimageinfo" layoutX="161.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Show Image Info" />
+            <RadioButton fx:id="male" layoutX="96.0" layoutY="222.0" mnemonicParsing="false" text="Male(זכר)">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="female" layoutX="187.0" layoutY="222.0" mnemonicParsing="false" text="Female(נקבה)" toggleGroup="$Gender" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
